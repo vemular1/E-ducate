@@ -1,0 +1,77 @@
+
+create table student(
+sname varchar(255),
+sid varchar(255) primary key,
+dept varchar(15),
+email varchar(255),
+dob varchar(255),
+uname varchar(255) unique,
+pass varchar(255),
+pname varchar(255)
+);
+
+create table Instructor(
+iname varchar(255),
+dept varchar(15),
+email varchar(255),
+dob varchar(255),
+uname varchar(255) primary key,
+pass varchar(255)
+);
+
+create table sub(
+iname varchar(100),
+sub varchar(255) primary key
+);
+
+
+create table meterial(
+iname varchar(255),
+sub varchar(255),
+met varchar(255)
+);
+
+create table notice(
+iname varchar(255),
+sub varchar(255),
+note varchar(255),
+datee varchar(255)
+);
+
+create table quiz(
+qid int(255) NOT NULL AUTO_INCREMENT,
+iname varchar(255),
+sub varchar(255),
+qname varchar(255),
+qtype varchar(255),
+que int(255),
+primary key(qid)
+);
+
+create table questions
+(
+qid2 int(255) NOT NULL AUTO_INCREMENT,
+qid int(255),
+qnum int(255),
+question varchar(255),
+opt1 varchar(255),
+opt2 varchar(255),
+opt3 varchar(255),
+opt4 varchar(255),
+ans varchar(255),
+file varchar(255),
+primary key(qid2)
+);
+
+create table exam(
+eid int(255) NOT NULL AUTO_INCREMENT,
+eid2 int(255),
+sid varchar(255),
+qid2 int(255),
+qid int(255),
+qnum int(255),
+question varchar(255),
+ans varchar(255),
+opt varchar(255),
+primary key(eid)
+);
